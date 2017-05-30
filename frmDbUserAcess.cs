@@ -113,7 +113,7 @@ namespace DbUserManagement
                 //if (connection.State == ConnectionState.Open)
                 //    MessageBox.Show("Connection Success!");
                 //Get all users
-                var selectedItem = comboBox1.SelectedItem.ToString();
+                var selectedItem = comboBox1.SelectedItem?.ToString();
 
                 var sql = "";
                 if (selectedItem == "View")
@@ -189,7 +189,7 @@ namespace DbUserManagement
                 {
                     connection.Open();
                     if (connection.State == ConnectionState.Open)
-                        MessageBox.Show("Connection Success!");
+                        MessageBox.Show("Success !");
                     //Get all users
                     var data = connection.Query<string>("SELECT name FROM sys.database_principals where type_desc = 'SQL_User'");
 
